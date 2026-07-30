@@ -1,0 +1,537 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String neededItem;
+        int quantity = 0;
+
+        int stone = 0;
+        int neededStone = 0;
+        int stoneStack = 0;
+        int stoneRemainder = 0;
+
+        int redstone = 0;
+        int neededRedstone = 0;
+        int redstoneStack = 0;
+        int redstoneRemainder = 0;
+
+        int stick = 0;
+        int neededStick = 0;
+        int stickStack = 0;
+        int stickRemainder = 0;
+
+        int cobblestone = 0;
+        int neededCobblestone = 0;
+        int cobblestoneStack = 0;
+        int cobblestoneRemainder = 0;
+
+        int plank = 0;
+        int neededPlanks = 0;
+        int plankStack = 0;
+        int plankRemainder = 0;
+
+        int log = 0;
+        int neededLog = 0;
+        int logStack = 0;
+        int logRemainder = 0;
+
+        int ice = 0;
+        int neededIce = 0;
+        int iceStack = 0;
+        int iceRemainder = 0;
+
+        int slimeball = 0;
+        int neededSlimeball = 0;
+        int slimeballStack = 0;
+        int slimeballRemainder = 0;
+
+        int quartz = 0;
+        int neededQuartz = 0;
+        int quartzStack = 0;
+        int quartzRemainder = 0;
+
+        int string = 0;
+        int neededString = 0;
+        int stringStack = 0;
+        int stringRemainder = 0;
+
+        int hay = 0;
+        int neededHay = 0;
+        int hayStack = 0;
+        int hayRemainder = 0;
+
+        int ironIngot = 0;
+        int neededIronIngot = 0;
+        int ironIngotStack = 0;
+        int ironIngotRemainder = 0;
+
+        int gunpowder = 0;
+        int neededGunpowder = 0;
+        int gunpowderStack = 0;
+        int gunpowderRemainder = 0;
+
+        int sand = 0;
+        int neededSand = 0;
+        int sandStack = 0;
+        int sandRemainder = 0;
+
+        int gold = 0;
+        int neededGold = 0;
+        int goldStack = 0;
+        int goldRemainder = 0;
+
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        for ( ; ;) {
+
+            System.out.println("What do you need? (singular)");
+            neededItem = scanner.nextLine();
+
+            System.out.println("How many do you need?");
+            quantity = Integer.parseInt(scanner.nextLine());
+
+            switch (neededItem) {
+
+                case "packed ice" -> {
+                    ice = 9;
+
+                    neededIce = quantity * ice;
+                }
+
+                case "blue ice" -> {
+                    ice = 81;
+
+                    neededIce = quantity * ice;
+                }
+
+                case "compass" -> {
+                    ironIngot = 4;
+                    redstone = 1;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededRedstone = quantity * redstone;
+                }
+
+                case "tnt" -> {
+                    sand = 4;
+                    gunpowder = 5;
+
+                    neededSand = quantity * sand;
+                    neededGunpowder = quantity * gunpowder;
+                }
+
+                case "hopper" -> {
+                    ironIngot = 5;
+                    log = 2;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededLog = quantity * log;
+                }
+
+                case "minecart" -> {
+                    ironIngot = 5;
+
+                    neededIronIngot = quantity * ironIngot;
+                }
+
+                case "minecart with hopper" -> {
+                    ironIngot = 10;
+                    log = 2;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededLog = quantity * log;
+                }
+
+                case "minecart with chest" -> {
+                    ironIngot = 5;
+                    log = 2;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededLog = quantity * log;
+                }
+
+                case "minecart with furnace" -> {
+                    ironIngot = 5;
+                    cobblestone = 8;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededCobblestone = quantity * cobblestone;
+                }
+
+                case "minecart with tnt" -> {
+                    ironIngot = 5;
+                    gunpowder = 5;
+                    sand = 4;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededGunpowder = quantity * gunpowder;
+                    neededSand = quantity * sand;
+                }
+
+                case "rail" -> {
+                    stick = 1;
+                    ironIngot = 6;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededStick = quantity * stick;
+                }
+
+                case "powered rail" -> {
+                    stick = 1;
+                    redstone = 1;
+                    gold = 6;
+
+                    neededStick = quantity * stick;
+                    neededRedstone = quantity * redstone;
+                    neededGold = quantity * gold;
+                }
+
+                case "detector rail" -> {
+                    ironIngot = 0;
+                    redstone = 0;
+                    stone = 0;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededRedstone = quantity * redstone;
+                    neededStone = quantity * stone;
+                }
+
+                case "activator rail" -> {
+                    ironIngot = 6;
+                    stick = 3;
+                    redstone = 1;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededStick = quantity * stick;
+                    neededRedstone = quantity * redstone;
+                }
+
+                case "target" -> {
+                    redstone = 4;
+                    hay = 9;
+
+                    neededRedstone = quantity * redstone;
+                    neededHay = quantity * hay;
+                }
+
+                case "piston" -> {
+                    redstone = 1;
+                    cobblestone = 4;
+                    plank = 3;
+
+                    neededRedstone = quantity * redstone;
+                    neededCobblestone = quantity * cobblestone;
+                    neededPlanks = quantity * plank;
+                }
+
+                case "sticky piston" -> {
+                    redstone = 1;
+                    cobblestone = 4;
+                    plank = 3;
+                    slimeball = 1;
+
+                    neededRedstone = quantity * redstone;
+                    neededCobblestone = quantity * cobblestone;
+                    neededPlanks = quantity * plank;
+                    neededSlimeball = quantity * slimeball;
+                }
+
+                case "dispenser" -> {
+                    cobblestone = 7;
+                    redstone = 1;
+                    string = 3;
+                    stick = 3;
+
+                    neededCobblestone = quantity * cobblestone;
+                    neededRedstone = quantity * redstone;
+                    neededString = quantity * string;
+                    neededStick = quantity * stick;
+                }
+
+                case "dropper" -> {
+                    cobblestone = 7;
+                    redstone = 1;
+
+                    neededCobblestone = quantity * cobblestone;
+                    neededRedstone = quantity * redstone;
+                }
+
+                case "redstone torch" -> {
+                    redstone = 1;
+                    stick = 1;
+
+                    neededRedstone = quantity * redstone;
+                    neededStick = quantity * stick;
+                }
+
+                case "lever" -> {
+                    cobblestone = 1;
+                    stick = 1;
+
+                    neededStick = quantity * stick;
+                    neededCobblestone = quantity * cobblestone;
+                }
+
+                case "tripwire hook" -> {
+                    ironIngot = 1;
+                    plank = 1;
+                    stick = 1;
+
+                    neededIronIngot = quantity * ironIngot;
+                    neededPlanks = quantity * plank;
+                    neededStick = quantity * stick;
+                }
+
+                case "comparator" -> {
+                    stone = 3;
+                    stick = 3;
+                    redstone = 3;
+                    quartz = 3;
+
+                    neededStone = quantity * stone;
+                    neededStick = quantity * stick;
+                    neededRedstone = quantity * redstone;
+                    neededQuartz = quantity * quartz;
+                }
+
+                case "repeater" -> {
+                    stone = 3;
+                    redstone = 3;
+                    stick = 2;
+
+                    neededStone = quantity * stone;
+                    neededRedstone = quantity * redstone;
+                    neededStick = quantity * stick;
+                }
+            }
+
+            if (neededRedstone > 64) {
+                redstoneStack = neededRedstone / 64;
+                redstoneRemainder = neededRedstone % 64;
+                System.out.println("You need " + redstoneStack + " redstone stack/s and " + redstoneRemainder + " redstone");
+            }
+            else if (neededRedstone == 64) {
+                System.out.println("You need 1 stack of redstone");
+            }
+            else if (neededRedstone > 0) {
+                System.out.println("You need " + neededRedstone + " redstone");
+            }
+            else if (neededRedstone < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededCobblestone > 64) {
+                cobblestoneStack = neededCobblestone / 64;
+                cobblestoneRemainder = neededCobblestone % 64;
+                System.out.println("You need " + cobblestoneStack + " cobblestone stack/s and " + cobblestoneRemainder + " cobblestone");
+            }
+            else if (neededCobblestone == 64) {
+                System.out.println("You need 1 stack of cobblestone");
+            }
+            else if (neededCobblestone > 0) {
+                System.out.println("You need " + neededCobblestone + " cobblestone");
+            }
+            else if (neededCobblestone < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededGold > 64) {
+                goldStack = neededGold / 64;
+                goldRemainder = neededGold % 64;
+                System.out.println("You need " + goldStack + " gold stack/s and " + goldRemainder + " gold");
+            }
+            else if (neededGold == 64) {
+                System.out.println("You need 1 stack of gold");
+            }
+            else if (neededGold > 0) {
+                System.out.println("You need " + neededGold + " gold");
+            }
+            else if (neededGold < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededPlanks > 64) {
+                plankStack = neededPlanks / 64;
+                plankRemainder = neededPlanks % 64;
+                System.out.println("You need " + plankStack + " wooden plank stack/s and " + plankRemainder + " wooden plank/s");
+            }
+            else if (neededPlanks == 64) {
+                System.out.println("You need 1 stack of planks");
+            }
+            else if (neededPlanks > 0) {
+                System.out.println("You need " + neededPlanks + " plank/s");
+            }
+            else if (neededPlanks < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededLog > 64) {
+                logStack = neededLog / 64;
+                logRemainder = neededLog % 64;
+                System.out.println("You need " + logStack + " log stack/s and " + logRemainder + " log/s");
+            }
+            else if (neededLog == 64) {
+                System.out.println("You need 1 stack of logs");
+            }
+            else if (neededLog > 0) {
+                System.out.println("You need " + neededLog + " log/s");
+            }
+            else if (neededLog < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededStick > 64) {
+                stickStack = neededStick / 64;
+                stickRemainder = neededStick % 64;
+                System.out.println("You need " + stickStack + " stick stack/s and " + stickRemainder + " stick/s");
+            }
+            else if (neededStick == 64) {
+                System.out.println("You need 1 stack of sticks");
+            }
+            else if (neededStick > 0) {
+                System.out.println("You need " + neededStick + " stick/s");
+            }
+            else if (neededStick < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededStone > 64) {
+                stoneStack = neededStone / 64;
+                stoneRemainder = neededStone % 64;
+                System.out.println("You need " + stoneStack + " stone stack/s and " + stoneRemainder + " stone");
+            }
+            else if (neededStone == 64) {
+                System.out.println("You need 1 stack of stone");
+            }
+            else if (neededStone > 0) {
+                System.out.println("You need " + neededStone + " stone");
+            }
+            else if (neededStone < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededIce > 64) {
+                iceStack = neededIce / 64;
+                iceRemainder = neededIce % 64;
+                System.out.println("You need " + iceStack + " ice stack/s and " + iceRemainder + " ice");
+            }
+            else if (neededIce == 64) {
+                System.out.println("You need 1 stack of ice");
+            }
+            else if (neededIce > 0) {
+                System.out.println("You need " + neededIce + " ice");
+            }
+            else if (neededIce < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededSlimeball > 64) {
+                slimeballStack = neededSlimeball / 64;
+                slimeballRemainder = neededSlimeball % 64;
+                System.out.println("You need " + slimeballStack + " slimeball stack/s and " + slimeballRemainder + " slimeball");
+            }
+            else if (neededSlimeball == 64) {
+                System.out.println("You need 1 stack of slimeballs");
+            }
+            else if (neededSlimeball > 0) {
+                System.out.println("You need " + neededSlimeball + " slimeballs");
+            }
+            else if (neededSlimeball < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededQuartz > 64) {
+                quartzStack = neededQuartz / 64;
+                quartzRemainder = neededQuartz % 64;
+                System.out.println("You need " + quartzStack + " quartz stack/s and " + quartzRemainder + " quartz");
+            }
+            else if (neededQuartz == 64) {
+                System.out.println("You need 1 stack of quartz");
+            }
+            else if (neededQuartz > 0) {
+                System.out.println("You need " + neededQuartz + " quartz");
+            }
+            else if (neededQuartz < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededString > 64) {
+                stringStack = neededString / 64;
+                stringRemainder = neededString % 64;
+                System.out.println("You need " + stringStack + " string stack/s and " + stringRemainder + " string");
+            }
+            else if (neededString == 64) {
+                System.out.println("You need 1 stack of string");
+            }
+            else if (neededString > 0) {
+                System.out.println("You need " + neededString + " string");
+            }
+            else if (neededString < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededHay > 64) {
+                hayStack = neededHay / 64;
+                hayRemainder = neededHay % 64;
+                System.out.println("You need " + hayStack + " hay stack/s and " + hayRemainder + " hay");
+            }
+            else if (neededHay == 64) {
+                System.out.println("You need 1 stack of hay");
+            }
+            else if (neededHay > 0) {
+                System.out.println("You need " + neededHay + " hay");
+            }
+            else if (neededHay < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededIronIngot > 64) {
+                ironIngotStack = neededIronIngot / 64;
+                ironIngotRemainder = neededIronIngot % 64;
+                System.out.println("You need " + ironIngotStack + " iron ingot stack/s and " + ironIngotRemainder + " iron ingot/s");
+            }
+            else if (neededIronIngot == 64) {
+                System.out.println("You need 1 stack of iron ingots");
+            }
+            else if (neededIronIngot > 0) {
+                System.out.println("You need " + neededIronIngot + " iron ingot/s");
+            }
+            else if (neededIronIngot < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededSand > 64) {
+                sandStack = neededSand / 64;
+                sandRemainder = neededSand % 64;
+                System.out.println("You need " + sandStack + " sand stack/s and " + sandRemainder + " sand/s");
+            }
+            else if (neededSand == 64) {
+                System.out.println("You need 1 stack of sand");
+            }
+            else if (neededSand > 0) {
+                System.out.println("You need " + neededSand + " sand/s");
+            }
+            else if (neededSand < 0) {
+                System.out.println("Enter a positive integer");
+            }
+
+            if (neededGunpowder > 64) {
+                gunpowderStack = neededGunpowder / 64;
+                gunpowderRemainder = neededGunpowder % 64;
+                System.out.println("You need " + gunpowderStack + " gunpowder stack/s and " + gunpowderRemainder + " gunpowder/s");
+            }
+            else if (neededGunpowder == 64) {
+                System.out.println("You need 1 stack of gunpowder");
+            }
+            else if (neededGunpowder > 0) {
+                System.out.println("You need " + neededGunpowder + " gunpowder/s");
+            }
+            else if (neededGunpowder < 0) {
+                System.out.println("Enter a positive integer");
+            }
+        }
+    }
+}
